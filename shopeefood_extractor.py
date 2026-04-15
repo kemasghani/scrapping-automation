@@ -1,18 +1,4 @@
-"""ShopeeFood mobile-API menu extractor.
 
-Workflow:
-  1. Capture a `get_delivery_dishes` (or equivalent) response from the
-     ShopeeFood Android app via mitmproxy with SSL pinning bypassed
-     (Frida + frida-multiple-unpinning).
-  2. Save the JSON body to a file, then run:
-         python shopeefood_extractor.py path/to/capture.json
-     or import `extract_menu` and pass the parsed dict directly.
-
-The shape below matches the `reply` envelope used by the
-`gappapi.deliverynow.vn` / `foody` mobile endpoints. Field names drift
-between regions (VN vs ID) and app versions — adjust `FIELD_MAP` as
-needed.
-"""
 
 from __future__ import annotations
 
